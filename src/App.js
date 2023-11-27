@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Home } from "./Components/Home";
 
+// The Layout component is used to separate the application's layout from the initial routing.
+// It returns a div containing the Home component.
+function Layout() {
+  return (
+    <div>
+      <Home></Home>
+    </div>
+  );
+}
+
+// The App function is responsible for defining the routing of the application using BrowserRouter and Routes.
+// The initial route "/" is associated with the Layout component.
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
