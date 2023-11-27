@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import "./home.css"
-import Navbar from './Navbar/navbar'
-import { Box, Grid, Typography } from '@mui/material'
+import React from 'react';
+import "./home.css";
+import Navbar from './Navbar/navbar';
+import { Box, Grid, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,106 +13,53 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-
-export default class Home extends Component {
-  render() {
-    return (
-      <div className='backgroundpage'>
-        <Navbar />
-        <Grid container direction={"column"} style={{ height: "100vh", marginTop: 64}}>
-        <Grid item >
-                  <Box
-                    sx={{
-                      display: "flex",
-                    
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/Images/brasileirao.png"
-                      alt="Slide 2"
-                      style={{
-                        height: "auto",
-                        width: "100%"
-                      }}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item style={{display: "flex", justifyContent: "center"}}>
-                <Typography color="white" variant="h1" className="title">Titulo </Typography>
-                <Typography color="white" variant="h3" className="title">Subtitulo </Typography>
-                </Grid>
-    
-          <BasicTable></BasicTable>
-        
-        <Typography color="white" variant="h4" className="title">Regras </Typography>
-    
-            <BasicCard></BasicCard>
-         
-          {/* <BasicCard></BasicCard> */}
-         
-          {/* <BasicCard></BasicCard> */}
-         
-          {/* <BasicCard></BasicCard> */}
-         
-          {/* <BasicCard></BasicCard> */}
-       
-        </Grid>
-
-        
-
-      </div>
-    )
-  }
-}
-
-
-
+import useResultsFootball from "../../Network/useResultsFootball";
 
 function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  pos: string,
+  name: number,
+  pontos: number,
+  sg: number,
+  premio: number,
+  clubes: Array<string>,
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { pos, name, pontos, sg, premio, GP1: clubes[0], GP2: clubes[1], GP3: clubes[2], GP4: clubes[3] };
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-function BasicTable() {
+function BasicTable({ rows }) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          <TableCell>Posição</TableCell>
+            <TableCell align="right">Nome</TableCell>
+            <TableCell align="right">Pontos</TableCell>
+            <TableCell align="right">Saldo de Gols</TableCell>
+            <TableCell align="right">Prêmio</TableCell>
+            <TableCell align="right">GP1</TableCell>
+            <TableCell align="right">GP2</TableCell>
+            <TableCell align="right">GP3</TableCell>
+            <TableCell align="right">GP4</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <TableRow
-              key={row.name}
+              key={index + 1}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {index + 1}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.name}</TableCell>
+              <TableCell align="right">{row.pontos}</TableCell>
+              <TableCell align="right">{row.sg}</TableCell>
+              <TableCell align="right">{row.premio}</TableCell>
+              <TableCell align="right">{row.GP1}</TableCell>
+              <TableCell align="right">{row.GP2}</TableCell>
+              <TableCell align="right">{row.GP3}</TableCell>
+              <TableCell align="right">{row.GP4}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -121,13 +68,9 @@ function BasicTable() {
   );
 }
 
-
-
-
-
 function BasicCard() {
   return (
-    <Card >
+    <Card>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
@@ -139,3 +82,59 @@ function BasicCard() {
     </Card>
   );
 }
+
+function Home() {
+  const [useResults, error] = useResultsFootball();
+
+  let dataRows = [];
+
+  if (useResults && useResults.data && useResults.data.Competidores) {
+    console.log(useResults.data.Competidores)
+    dataRows = useResults.data.Competidores.map((competidor) => {
+      return createData(
+        "", // pos (não tenho informações sobre a posição no JSON)
+        competidor.Nome,
+        competidor.Pontos,
+        competidor.Saldo_Gols,
+        competidor.Premio,
+        competidor.Clubes.map((clube) => clube.Clube), // Mapeie os nomes dos clubes
+      );
+    });
+  }
+
+
+  return (
+    <div className='backgroundpage'>
+      <Navbar />
+      <Grid container direction={"column"} style={{marginTop: 64 }}>
+        <Grid item>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/Images/brasileirao.png"
+              alt="Slide 2"
+              style={{
+                height: "auto",
+                width: "100%"
+              }}
+            />
+          </Box>
+        </Grid>
+        <Grid item style={{ display: "flex", justifyContent: "center" }}>
+          <Typography color="white" variant="h1" className="title">Titulo </Typography>
+          <Typography color="white" variant="h3" className="title">Subtitulo </Typography>
+        </Grid>
+        <BasicTable rows={dataRows} />
+        <Typography color="white" variant="h4" className="title">Regras </Typography>
+        <BasicCard />
+        {/* Adicione mais instâncias de BasicCard conforme necessário */}
+      </Grid>
+    </div>
+  );
+}
+
+export default Home;
