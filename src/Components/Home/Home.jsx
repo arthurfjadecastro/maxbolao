@@ -28,19 +28,19 @@ function createData(
 
 function BasicTable({ rows }) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer style={{ margin: 96, marginTop: 0, background: "#484848" }} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell>Posição</TableCell>
-            <TableCell align="right">Nome</TableCell>
-            <TableCell align="right">Pontos</TableCell>
-            <TableCell align="right">Saldo de Gols</TableCell>
-            <TableCell align="right">Prêmio</TableCell>
-            <TableCell align="right">GP1</TableCell>
-            <TableCell align="right">GP2</TableCell>
-            <TableCell align="right">GP3</TableCell>
-            <TableCell align="right">GP4</TableCell>
+            <TableCell style={{color: "#F2F2F2"}}>Posição</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">Nome</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">Pontos</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">Saldo de Gols</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">Prêmio</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">GP1</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">GP2</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">GP3</TableCell>
+            <TableCell style={{color: "#F2F2F2"}} align="right">GP4</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -49,17 +49,17 @@ function BasicTable({ rows }) {
               key={index + 1}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell style={{color: "#F2F2F2"}} component="th" scope="row">
                 {index + 1}
               </TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.pontos}</TableCell>
-              <TableCell align="right">{row.sg}</TableCell>
-              <TableCell align="right">{row.premio}</TableCell>
-              <TableCell align="right">{row.GP1}</TableCell>
-              <TableCell align="right">{row.GP2}</TableCell>
-              <TableCell align="right">{row.GP3}</TableCell>
-              <TableCell align="right">{row.GP4}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.name}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.pontos}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.sg}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.premio}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP1}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP2}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP3}</TableCell>
+              <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP4}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -67,6 +67,7 @@ function BasicTable({ rows }) {
     </TableContainer>
   );
 }
+
 
 function BasicCard() {
   return (
@@ -106,7 +107,7 @@ function Home() {
   return (
     <div className='backgroundpage'>
       <Navbar />
-      <Grid container direction={"column"} style={{marginTop: 64 }}>
+      <Grid container direction={"column"} style={{margin: 0, marginTop: 0 }}>
         <Grid item>
           <Box
             sx={{
@@ -125,13 +126,33 @@ function Home() {
           </Box>
         </Grid>
         <Grid item style={{ display: "flex", justifyContent: "center" }}>
-          <Typography color="white" variant="h1" className="title">Titulo </Typography>
-          <Typography color="white" variant="h3" className="title">Subtitulo </Typography>
+        <Grid item>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/Images/max.png"
+              alt="Slide 2"
+              style={{
+                height: "auto",
+                width: "100%"
+              }}
+            />
+          </Box>
         </Grid>
+        <Grid item>
+        <Typography color="white" variant="h1" className="title">Bolão do Max </Typography>
+        <Typography color="white" variant="h5" className="title">  Resultados em Tempo Real</Typography>
+        </Grid>
+        </Grid>
+        <Grid container >
         <BasicTable rows={dataRows} />
+        </Grid>
         <Typography color="white" variant="h4" className="title">Regras </Typography>
         <BasicCard />
-        {/* Adicione mais instâncias de BasicCard conforme necessário */}
       </Grid>
     </div>
   );
