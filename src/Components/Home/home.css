@@ -1,10 +1,9 @@
 .backgroundpage{
-    /* width: 1440px;
-    height: 3160px;
-    top: -46px;
-    left: -2123px; */
     width: 100%;
-    height: 100vh;
+  height: 100vh;
+  background: #121F18;
+  overflow-y: auto;
+  overflow-x: hidden;
     background: #121F18;
 
 }
