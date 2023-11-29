@@ -1,0 +1,15 @@
+.layoutCard {
+    display: flex;
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+
+.style {
+    border-radius: 8px;
+    background: #2A2A2A;
+}
