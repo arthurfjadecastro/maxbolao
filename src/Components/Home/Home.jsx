@@ -85,8 +85,13 @@ function Home() {
         <Grid container >
         <BasicTable rows={dataRows} />
         </Grid>
+        <div className="Regras">
+          <div className='Row'>
+        <BasicCard />
+
+          </div>
+        </div>
         {/* <Typography color="white" variant="h4" className="title">Regras </Typography> */}
-        {/* <BasicCard /> */}
     </div>
     </>
   );
