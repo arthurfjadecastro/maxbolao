@@ -5,6 +5,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import useResultsFootball from "../../Network/useResultsFootball";
 import { BasicCard } from '../BasicCard';
 import { BasicTable } from '../BasicTable';
+import { format, parse } from 'date-fns';
 
 
 const TITLECARDS = [
@@ -36,10 +37,18 @@ function Home() {
 
   let dataRows = [];
   let updateAt = ""
+ // Supondo que useResults.data.atualizado_em seja uma string de data válida
+ const updatedAtString = useResults.data.atualizado_em;
+
 
   if (useResults && useResults.data && useResults.data.Competidores) {
     updateAt = useResults.data.atualizado_em
     console.log(dataRows)
+     // Fazendo o parsing manual para converter a string em um objeto de data
+    const updatedAt = parse(updatedAtString, 'dd/MM/yyyy HH:mm:ss', new Date());
+
+    // Formatando a data
+    const formattedDate = format(updatedAt, 'dd/MM/yyyy HH:mm:ss');
     dataRows = useResults.data.Competidores.map((competidor) => {
       return createData(
         "", // pos (não tenho informações sobre a posição no JSON)
@@ -82,7 +91,9 @@ function Home() {
         <div style={{ marginBottom: 32 }}>
           <Typography className="titleMax" textAlign={"center"} color="white" variant="h1" >Bolão do Max </Typography>
           <Typography textAlign={"center"} className="subTitleMax" color="white" variant="h5" >  Resultados em Tempo Real</Typography>
-          <Typography textAlign={"center"}  color="white" variant="h6" > {updateAt}</Typography>
+          <Typography textAlign={"center"} color="white" variant="h6">
+            Última atualização: {formattedDate}
+          </Typography>
 
         </div>
         <Grid style={{ position: "relative" }} item>
