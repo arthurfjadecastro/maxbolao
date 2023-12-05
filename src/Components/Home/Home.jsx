@@ -32,10 +32,14 @@ function Home() {
   const [useResults, error] = useResultsFootball();
   const regrasRef = useRef(null);
 
+
+
   let dataRows = [];
+  let updateAt = ""
 
   if (useResults && useResults.data && useResults.data.Competidores) {
-    console.log(useResults.data.Competidores)
+    updateAt = useResults.data.atualizado_em
+    console.log(dataRows)
     dataRows = useResults.data.Competidores.map((competidor) => {
       return createData(
         "", // pos (não tenho informações sobre a posição no JSON)
@@ -78,6 +82,8 @@ function Home() {
         <div style={{ marginBottom: 32 }}>
           <Typography className="titleMax" textAlign={"center"} color="white" variant="h1" >Bolão do Max </Typography>
           <Typography textAlign={"center"} className="subTitleMax" color="white" variant="h5" >  Resultados em Tempo Real</Typography>
+          <Typography textAlign={"center"}  color="white" variant="h6" > {updateAt}</Typography>
+
         </div>
         <Grid style={{ position: "relative" }} item>
           <div style={{ position: "absolute", left: 0, top: -194 }}>
