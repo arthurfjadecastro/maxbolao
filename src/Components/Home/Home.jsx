@@ -91,7 +91,7 @@ function Home() {
         <div style={{ marginBottom: 32 }}>
           <Typography className="titleMax" textAlign={"center"} color="white" variant="h1" >Bolão do Max </Typography>
           <Typography textAlign={"center"} className="subTitleMax" color="white" variant="h5" >  Resultados em Tempo Real</Typography>
-          <Typography textAlign={"center"} color="white" variant="h6">
+          <Typography textAlign={"center"} color="rgba(255,255,255, 0.4)" variant="body2">
             Última atualização: {updateAt}
           </Typography>
 
