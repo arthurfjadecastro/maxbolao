@@ -59,8 +59,7 @@
 
   .Regras{
     max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 24px auto;
   }
   .rulesContainer {
     display: grid;

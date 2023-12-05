@@ -119,7 +119,7 @@ function Home() {
             <BasicCard title={TITLECARDS[1]} index={2}/>
             <BasicCard title={TITLECARDS[2]} index={3}/>
             <BasicCard title={TITLECARDS[3]} index={4}/>
-            <BasicCard title={TITLECARDS[4]} isFifthCard index={5} className="fullWidth"/>
+            <BasicCard title={TITLECARDS[4]} isFifthCard index={5}/>
           </div>
       <div >
           </div>
