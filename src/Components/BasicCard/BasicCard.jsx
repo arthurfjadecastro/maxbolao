@@ -1,22 +1,29 @@
-import { Button, Card, CardActions, CardContent, Grid, Typography } from '@mui/material';
-import React from 'react'
+// BasicCard.jsx
+import React from 'react';
+import "./basicCard.css";
 
-function BasicCard() {
-    
-    return (
-      <div className="Container">
-        <div className="Step">
-          <div className="tipografiaIcon"></div>
-        </div>
-        <div className="Tipografia">
-          <p className="textCard">
-              A aposta esse ano custa R$ 120,00 e deve ser paga antes de acabar o campeonato
-          </p>
-        </div>
+function BasicCard({ title, isFifthCard, isFourthCard, index }) {
+  const titleWithLineBreaks = title.split('\n').map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
+
+  const containerClass = isFifthCard ? 'FifthCard' : (isFourthCard ? 'FourthCard' : '');
+
+  return (
+    <div className={`Container ${containerClass}`}>
+      <div className="Step">
+        <div className="tipografiaIcon">{index}</div>
       </div>
-    )
-  }
-
+      <div className="Tipografia">
+        <p className="textCard">
+          {titleWithLineBreaks}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default BasicCard;
-

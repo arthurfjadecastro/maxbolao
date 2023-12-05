@@ -28,7 +28,6 @@ const settings = ['Logout'];
   }
 
 
-
   return (
     <>
     <AppBar position="absolute" style={{ background: "#030504"}}>
@@ -44,7 +43,7 @@ const settings = ['Logout'];
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar style={{marginRight: 8, backgroundColor: "white"}} alt="Matias" src="images/matias.png" />
                 <Typography color="white" variant="body1">
-                Matias Adrian
+                Francisco L Figueiredo
               </Typography>
               </IconButton>
               
@@ -72,16 +71,12 @@ const settings = ['Logout'];
               ))}
             </Menu>
           </Box>
-
             </RenderIf>
-      
                 <Button onClick={handleLogin} size={"small"} variant="outlined" style={{ cursor: "pointer" }} color="inherit">
                     Regras
-                </Button>
-         
+                </Button> 
         </Toolbar>
     </AppBar>
-                
     </>
   )
 }

@@ -1,5 +1,18 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
+
+
+// const TableHeader = styled(TableHead)(({ theme }) => ({
+//   display: "flex",
+//   height: 44,
+//   padding: "12px 24px",
+//   alignItems: "center",
+//   gap: 12,
+//   alignSelf: "stretch",
+//   borderBottom: "1px solid #484848",
+//   background: "#323232",
+// }));
 
 
 function BasicTable({ rows }) {
@@ -46,3 +59,5 @@ function BasicTable({ rows }) {
 
 
   export default BasicTable;
+
+

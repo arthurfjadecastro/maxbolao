@@ -1,20 +1,13 @@
-/* .layoutCard {
-    display: flex;
-    padding: 24px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    flex: 1 0 0;
-    align-self: stretch;
-}
+/* basicCard.css */
 
-
-.style {
-    border-radius: 8px;
-    background: #2A2A2A;
-} */
-
-.Container { 
+/* Reset de margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .Container { 
     border-radius: 8px;
     background: #2A2A2A;
     display: flex;
@@ -22,11 +15,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-    flex: 1 0 0;
+    flex: 1;
     align-self: stretch;
-}
-
-.Step {
+    border-radius: 8px;
+    background: #2A2A2A;
+    /* margin: 24px; */
+    margin-left: 0;
+    max-width: 100%;
+    flex: 1 0 0;
+  }
+  
+  .Step {
     display: flex;
     padding: 16px;
     flex-direction: column;
@@ -35,9 +34,9 @@
     gap: 10px;
     border-radius: 4px;
     background: #B1FF74;
-}
-
-.tipografia { 
+  }
+  
+  .textCard { 
     align-self: stretch;
     color: #A8A8A8;
     font-family: Satoshi;
@@ -45,13 +44,21 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-}
-
-.tipografiaIcon { 
+  }
+  
+  .tipografiaIcon { 
     color: #000;
     font-family: Clash Display;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-}
+  }
+  
+  .FourthCard {
+    flex: 1 0 0;
+  }
+  .FifthCard {
+    flex: 2 0 0;
+    max-width: none; /* Adicionado para remover a restrição de largura máxima */
+  }
