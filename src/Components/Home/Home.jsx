@@ -38,17 +38,17 @@ function Home() {
   let dataRows = [];
   let updateAt = ""
  // Supondo que useResults.data.atualizado_em seja uma string de data válida
- const updatedAtString = useResults.data.atualizado_em;
+//  const updatedAtString = useResults.data.atualizado_em;
 
 
   if (useResults && useResults.data && useResults.data.Competidores) {
     updateAt = useResults.data.atualizado_em
     console.log(dataRows)
      // Fazendo o parsing manual para converter a string em um objeto de data
-    const updatedAt = parse(updatedAtString, 'dd/MM/yyyy HH:mm:ss', new Date());
+    // const updatedAt = parse(updatedAtString, 'dd/MM/yyyy HH:mm:ss', new Date());
 
     // Formatando a data
-    const formattedDate = format(updatedAt, 'dd/MM/yyyy HH:mm:ss');
+    // const formattedDate = format(updatedAt, 'dd/MM/yyyy HH:mm:ss');
     dataRows = useResults.data.Competidores.map((competidor) => {
       return createData(
         "", // pos (não tenho informações sobre a posição no JSON)
@@ -92,7 +92,7 @@ function Home() {
           <Typography className="titleMax" textAlign={"center"} color="white" variant="h1" >Bolão do Max </Typography>
           <Typography textAlign={"center"} className="subTitleMax" color="white" variant="h5" >  Resultados em Tempo Real</Typography>
           <Typography textAlign={"center"} color="white" variant="h6">
-            Última atualização: {formattedDate}
+            Última atualização: {updateAt}
           </Typography>
 
         </div>
