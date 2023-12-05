@@ -10,7 +10,7 @@ function BasicCard({ title, isFifthCard, isFourthCard, index }) {
     </React.Fragment>
   ));
 
-  const containerClass = isFifthCard ? 'FifthCard' : (isFourthCard ? 'FourthCard' : '');
+  const containerClass = isFifthCard ? 'FifthCard' : {};
 
   return (
     <div className={`Container ${containerClass}`}>

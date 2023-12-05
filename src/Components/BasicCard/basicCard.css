@@ -56,11 +56,19 @@
     font-weight: 700;
     line-height: normal;
   }
-  
-  .FourthCard {
-    flex: 1 0 0;
+
+  .Regras{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
   }
-  .FifthCard {
-    flex: 2 0 0;
-    max-width: none; /* Adicionado para remover a restrição de largura máxima */
+  .rulesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 colunas iguais */
+    gap: 20px;
+    width: 100%
+  }
+
+  .FifthCard{
+    grid-column: span 2; /* Ocupar duas colunas */
   }

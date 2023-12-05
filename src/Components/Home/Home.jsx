@@ -114,15 +114,13 @@ function Home() {
         </Grid>
         <div className="Regras" ref={regrasRef}>
           <p className="regrasStyle">Regras</p>
-          <div className='Row'>
+          <div className='rulesContainer'>
             <BasicCard title={TITLECARDS[0]} index={1} />
             <BasicCard title={TITLECARDS[1]} index={2}/>
             <BasicCard title={TITLECARDS[2]} index={3}/>
+            <BasicCard title={TITLECARDS[3]} index={4}/>
+            <BasicCard title={TITLECARDS[4]} isFifthCard index={5} className="fullWidth"/>
           </div>
-          <div className='Row'>
-          <BasicCard title={TITLECARDS[3]} index={4}/>
-          <BasicCard title={TITLECARDS[4]} isFifthCard index={5}/>
-        </div>
       <div >
           </div>
         </div>
