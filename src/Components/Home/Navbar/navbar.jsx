@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import {useNavigate } from "react-router-dom";
 import {RenderIf} from "../Utils"
 
-function Navbar({login, handleLogin,logout}) {
+function Navbar({login, handleLogin,logout, regrasRef}) {
 
 
 const settings = ['Logout'];
@@ -26,6 +26,16 @@ const settings = ['Logout'];
   const handleLogout = () => {
     navigate("/");
   }
+
+ 
+
+  // Função para rolar suavemente para a div "Regras"
+  const scrollToRegras = () => {
+    regrasRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start', // ou 'end' se quiser que o final da div esteja visível
+    });
+  };
 
 
   return (
@@ -72,9 +82,9 @@ const settings = ['Logout'];
             </Menu>
           </Box>
             </RenderIf>
-                <Button onClick={handleLogin} size={"small"} variant="outlined" style={{ cursor: "pointer" }} color="inherit">
-                    Regras
-                </Button> 
+            <Button onClick={scrollToRegras} size="small" variant="outlined" style={{ cursor: "pointer" }} color="inherit">
+              Regras
+            </Button>
         </Toolbar>
     </AppBar>
     </>

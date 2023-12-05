@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "./home.css";
 import Navbar from './Navbar/navbar';
 import { Box, Grid, Typography } from '@mui/material';
@@ -30,6 +30,7 @@ function createData(
 
 function Home() {
   const [useResults, error] = useResultsFootball();
+  const regrasRef = useRef(null);
 
   let dataRows = [];
 
@@ -50,7 +51,7 @@ function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar regrasRef={regrasRef} />
       <Grid container direction={"column"} style={{ margin: 0, marginTop: 0 }}>
         <Grid item>
           <Box
@@ -94,7 +95,7 @@ function Home() {
         <Grid container >
           <BasicTable rows={dataRows} />
         </Grid>
-        <div className="Regras">
+        <div className="Regras" ref={regrasRef}>
           <p className="regrasStyle">Regras</p>
           <div className='Row'>
             <BasicCard title={TITLECARDS[0]} index={1} />
