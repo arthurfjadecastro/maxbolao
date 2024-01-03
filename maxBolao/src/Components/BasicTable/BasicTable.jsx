@@ -12,8 +12,8 @@ const StyledTable = styled(Table)({
   minWidth: 650,
 });
 
-const StyledTableHeadCell = styled(TableCell)(({ theme }) => ({
-  color: "#F2F2F2",
+const StyledTableHeadCell = styled(TableCell)(({ theme, header }) => ({
+  color: header ? "#A8A8A8" : "#F2F2F2",
   fontFamily: "Satoshi",
   fontSize: 16,
   fontStyle: "normal",
@@ -38,15 +38,15 @@ function BasicTable({ rows }) {
       <StyledTable aria-label="simple table">
         <TableHead>
           <TableRow>
-            <StyledTableHeadCell>Posição</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">Nome</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">Pontos</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">Saldo de Gols</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">Prêmio</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">GP1</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">GP2</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">GP3</StyledTableHeadCell>
-            <StyledTableHeadCell align="right">GP4</StyledTableHeadCell>
+            <StyledTableHeadCell header={true}>Posição</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">Nome</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">Pontos</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">Saldo de Gols</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">Prêmio</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">GP1</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">GP2</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">GP3</StyledTableHeadCell>
+            <StyledTableHeadCell header={true} align="right">GP4</StyledTableHeadCell>
           </TableRow>
         </TableHead>
         <TableBody>
