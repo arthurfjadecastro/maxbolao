@@ -5,7 +5,6 @@ import { Box, Grid, Typography } from '@mui/material';
 import useResultsFootball from "../../Network/useResultsFootball";
 import { BasicCard } from '../BasicCard';
 import { BasicTable } from '../BasicTable';
-import { format, parse } from 'date-fns';
 
 
 const TITLECARDS = [
@@ -33,7 +32,8 @@ function Home() {
   const [useResults, error] = useResultsFootball();
   const regrasRef = useRef(null);
 
-
+  
+  console.log(useResults)
 
   let dataRows = [];
   let updateAt = ""
@@ -65,7 +65,7 @@ function Home() {
         competidor.Pontos,
         competidor.Saldo_Gols,
         competidor.Premio,
-        competidor.Clubes.map((clube) => clube.Clube), // Os nomes dos clubes
+        competidor.Clubes.map((clube) => clube), // Os nomes dos clubes
       );
     });
   }

@@ -61,11 +61,19 @@
     max-width: 100%;
     margin: 24px auto;
   }
+
+
   .rulesContainer {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 colunas iguais */
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 20px;
-    width: 100%
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .rulesContainer {
+      display: contents;
+    }
   }
 
   .FifthCard{
