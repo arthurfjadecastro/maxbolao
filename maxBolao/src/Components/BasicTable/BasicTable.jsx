@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import React, { useState } from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogTitle, DialogContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const StyledTableContainer = styled(TableContainer)({
@@ -25,15 +25,30 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:last-child td, &:last-child th': {
     border: 0,
   },
+  cursor: 'pointer',
+  "&:hover": {
+    backgroundColor: "#313131",
+  },
 }));
 
 function BasicTable({ rows }) {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedRowInfo, setSelectedRowInfo] = useState(null);
   const winnerColor = (index) => {
     if(index === 0 || index === 1 || index === 2 || index === rows.length - 1) {
       return "#B1FF74"
     }
   }
+  const handleRowClick = (row) => {
+    setSelectedRowInfo(row);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
   return (
+    <>
     <StyledTableContainer component={Paper}>
       <StyledTable aria-label="simple table">
         <TableHead>
@@ -51,7 +66,7 @@ function BasicTable({ rows }) {
         </TableHead>
         <TableBody>
           {rows.map((row, index) => (
-            <StyledTableRow key={index + 1}>
+           <StyledTableRow key={index + 1} onClick={() => handleRowClick(row)}>
               <StyledTableHeadCell component="th" scope="row">{index + 1}</StyledTableHeadCell>
               <StyledTableHeadCell align="right">{row.name}</StyledTableHeadCell>
               <StyledTableHeadCell align="right">{row.pontos}</StyledTableHeadCell>
@@ -66,6 +81,20 @@ function BasicTable({ rows }) {
         </TableBody>
       </StyledTable>
     </StyledTableContainer>
+    <Dialog open={dialogOpen} onClose={handleCloseDialog}>
+    <DialogTitle>Informações da Linha</DialogTitle>
+    <DialogContent>
+      {selectedRowInfo && (
+        <>
+          <Typography>Nome: {selectedRowInfo.name}</Typography>
+          <Typography>Pontos: {selectedRowInfo.pontos}</Typography>
+          <Typography>Saldo de Gols: {selectedRowInfo.sg}</Typography>
+
+        </>
+      )}
+    </DialogContent>
+  </Dialog>
+  </>
   );
 }
 
