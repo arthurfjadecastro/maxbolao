@@ -1,63 +1,72 @@
+import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+const StyledTableContainer = styled(TableContainer)({
+  margin: 0,
+  marginTop: 0,
+  background: "#484848",
+});
 
+const StyledTable = styled(Table)({
+  minWidth: 650,
+});
 
-// const TableHeader = styled(TableHead)(({ theme }) => ({
-//   display: "flex",
-//   height: 44,
-//   padding: "12px 24px",
-//   alignItems: "center",
-//   gap: 12,
-//   alignSelf: "stretch",
-//   borderBottom: "1px solid #484848",
-//   background: "#323232",
-// }));
+const StyledTableHeadCell = styled(TableCell)(({ theme }) => ({
+  color: "#F2F2F2",
+  fontFamily: "Satoshi",
+  fontSize: 16,
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "normal"
+}));
 
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
 function BasicTable({ rows }) {
-    return (
-      <TableContainer style={{ margin: 0, marginTop: 0, background: "#484848" }} component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell style={{color: "#F2F2F2"}}>Posição</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">Nome</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">Pontos</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">Saldo de Gols</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">Prêmio</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">GP1</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">GP2</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">GP3</TableCell>
-              <TableCell style={{color: "#F2F2F2"}} align="right">GP4</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row, index) => (
-              <TableRow
-                key={index + 1}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell style={{color: "#F2F2F2"}} component="th" scope="row">
-                  {index + 1}
-                </TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.name}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.pontos}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.sg}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.premio}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP1}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP2}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP3}</TableCell>
-                <TableCell style={{color: "#F2F2F2"}} align="right">{row.GP4}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    );
+  const winnerColor = (index) => {
+    if(index === 0 || index === 1 || index === 2 || index === rows.length - 1) {
+      return "#B1FF74"
+    }
   }
+  return (
+    <StyledTableContainer component={Paper}>
+      <StyledTable aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <StyledTableHeadCell>Posição</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">Nome</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">Pontos</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">Saldo de Gols</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">Prêmio</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">GP1</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">GP2</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">GP3</StyledTableHeadCell>
+            <StyledTableHeadCell align="right">GP4</StyledTableHeadCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row, index) => (
+            <StyledTableRow key={index + 1}>
+              <StyledTableHeadCell component="th" scope="row">{index + 1}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.name}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.pontos}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.sg}</StyledTableHeadCell>
+              <StyledTableHeadCell style={{color: winnerColor(index)}} align="right">{row.premio}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.GP1}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.GP2}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.GP3}</StyledTableHeadCell>
+              <StyledTableHeadCell align="right">{row.GP4}</StyledTableHeadCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </StyledTable>
+    </StyledTableContainer>
+  );
+}
 
-
-  export default BasicTable;
-
-
+export default BasicTable;

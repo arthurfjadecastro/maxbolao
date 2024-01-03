@@ -117,7 +117,6 @@ function Home() {
             />
           </div>
         </Grid>
-        {/* </Grid> */}
         <Grid container >
           <BasicTable rows={dataRows} />
         </Grid>
