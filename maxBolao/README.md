@@ -79,3 +79,67 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 ├── package.json
 ├── README.md
 ```
+
+
+## Frameworks aplicadas no projeto
+
+**Hero** - Biblioteca para criar transições de visualização em iOS. 
+
+**Alamofire** - Biblioteca que atua na camada de rede usando a linguagem swift.
+
+
+## Experiência com o projeto 
+
+    # Com este projeto aprimorei a qualidade técnica e o conhecimento ao se trabalhar com requisições e boas 
+      práticas baseadas em conceitos altamente importantes no desenvolvimento de software.
+    
+    - Single Responsibility Principle para separar atividades diferentes em diferentes partes do código, para
+      que no futuro se houver alterações ou incrementos em lugares específicos, mantenha-se a redução nos
+      custos de épicos relacionados a bugs no código.
+
+    - Criação de um 'Fetcher', que é a abstração da requisição e a obtenção dos dados. 
+
+    - Conhecimento adquirido em 'Separation of concern design principles', que parte da organização lógica
+      dos arquivos e pastas do projeto.
+
+    - Criação de um Arquivo de constantes com valores parametrizados em prol de realizar 
+      alterações propagáveis, aumentando assim a manutenibilidade.
+
+    
+  
+    
+- Neste projeto foi utilizado Coordinator, que permite desacoplar o fluxo lógico do projeto, agregando valor na escalabilidade de novas telas.
+
+- O Factory foi usado com a intenção de desacoplar a instanciação da classe de atualização dos dados de Movies.
+	
+- Singleton, Delegate entre outros padrões também foram utilizados.
+
+
+
+
+
+
+
+## Futuro
+
+Os planos para este projeto são:
+
+- [ ] Criação de uma Launch Screen customizada
+        
+      Em prol de aprimorar o conhecimento em customizar animações. 
+
+- [ ] Criação de um UserOnboarding 
+
+      Facilitar a informação para o melhor entendimento e usabilidade do aplicativo.
+
+- [ ] Criação de um Banco de Dados 
+
+      Proposta de aplicação prática em torno do conhecimento adquirido até o momento. 
+    
+    
+    
+
+### Autor
+
+- [Arthur de Castro](https://github.com/arthurfjadecastro)
+
