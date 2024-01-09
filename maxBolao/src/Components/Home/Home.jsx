@@ -11,9 +11,14 @@ import { Facade } from './FrontAge';
 
 
 
+
+  
+
+
 function Home() {
   //Realizar fetch na rota https://bolao.maxmat1.com.br/resultados
   const [useResults, error] = useResultsFootball();
+
 
   //Configurar rotação das faixas
   const rotates = ["rotate(3deg)", "rotate(-3deg)"];
@@ -24,35 +29,44 @@ function Home() {
   // Última atualização
   let updateAt = ""
 
+  
+    //Método para formatar a última atualização
+    function EqualDesignDateFormat(dataString) {
 
-  //Método para formatar a última atualização
-  function EqualDesignDateFormat(dataString) {
-    const meses = {
-      Jan: 'Janeiro', Feb: 'Fevereiro', Mar: 'Março', Apr: 'Abril', May: 'Maio', Jun: 'Junho',
-      Jul: 'Julho', Aug: 'Agosto', Sep: 'Setembro', Oct: 'Outubro', Nov: 'Novembro', Dec: 'Dezembro'
-    };
+      const meses = {
+        Jan: 'Janeiro', Feb: 'Fevereiro', Mar: 'Março', Apr: 'Abril', May: 'Maio', Jun: 'Junho',
+        Jul: 'Julho', Aug: 'Agosto', Sep: 'Setembro', Oct: 'Outubro', Nov: 'Novembro', Dec: 'Dezembro'
+      };
+  
+      const regex = /(\d+)\/([a-zA-Z]+)\/(\d+)\s+(\d+:\d+:\d+)/;
+      const [,day, mesAbrev, year, hrs] = dataString.match(regex);
+      console.log("regex", dataString.match(regex))
+      const mes = meses[mesAbrev];
+  
+      return `${day} de ${mes} de ${year} às ${hrs}`;
+    }
+    
 
-    const regex = /(\d+)\/([a-zA-Z]+)\/(\d+)\s+(\d+:\d+:\d+)/;
-    const [day, mesAbrev, year, hrs] = dataString.match(regex);
-    const mes = meses[mesAbrev];
 
-    return `${day} de ${mes} de ${year} às ${hrs}`;
-  }
-  //Pattern
-  function createData(
-    pos,
-    name,
-    pontos,
-    sg,
-    premio,
-    clubes,
-  ) {
-    return { pos, name, pontos, sg, premio, GP1: clubes[0], GP2: clubes[1], GP3: clubes[2], GP4: clubes[3] };
-  }
 
-  // Popular
-  if (useResults && useResults.data && useResults.data.Competidores) {
-    updateAt = EqualDesignDateFormat(useResults.data.atualizado_em)
+    // Popular
+    if (useResults && useResults.data && useResults.data.Competidores) {
+      updateAt = EqualDesignDateFormat(useResults.data.atualizado_em)
+      console.log(updateAt)
+
+    //Pattern
+    function createData(
+      pos,
+      name,
+      pontos,
+      sg,
+      premio,
+      clubes,
+    ) {
+      return { pos, name, pontos, sg, premio, GP1: clubes[0], GP2: clubes[1], GP3: clubes[2], GP4: clubes[3] };
+    }
+
+
     
     players = useResults.data.Competidores.map((competidor) => {
       return createData(
@@ -65,6 +79,8 @@ function Home() {
       );
     });
   }
+
+
 
   // Container para análise de layout futura no modo responsivo quando em ambiente de homologação
   const FrameItemContainer = styled('div')({
