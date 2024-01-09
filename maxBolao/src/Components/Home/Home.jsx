@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import Navbar from "./Navbar/Navbar";
 import { Button, Grid } from "@mui/material";
 import useResultsFootball from "../../Network/useResultsFootball";
 import { BasicTable } from "../BasicTable";
@@ -8,6 +7,7 @@ import { HeaderMax, MaxImage } from "./HeaderMax";
 import { Rules } from "./Rules";
 import { Facade } from "./FrontAge";
 import { toast } from "react-toastify";
+import Navbar from "./Navbar/navbar";
 import "./home.css";
 
 function Home() {
