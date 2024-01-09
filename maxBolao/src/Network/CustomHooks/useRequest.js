@@ -12,8 +12,8 @@ const useRequest = (requestFunction, requestBody) => {
     }
     requestFunction &&
       requestFunction(requestBody)
-        .then(response => setResult(response))
-        .catch(error => setError(error));
+        .then((response) => setResult(response))
+        .catch((error) => setError(error));
 
     return () => {
       setResult(null);

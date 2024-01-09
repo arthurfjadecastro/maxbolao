@@ -1,13 +1,13 @@
-import { Table, TableCell, TableContainer, TableRow } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import { styled } from '@mui/system';
+import { Table, TableCell, TableContainer, TableRow } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+import { styled } from "@mui/system";
 
 export const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     background: {
-      paper: '#484848',
-      default: '#484848',
+      paper: "#484848",
+      default: "#484848",
     },
   },
 });
@@ -28,14 +28,14 @@ export const StyledTableHeadCell = styled(TableCell)(({ theme, header }) => ({
   fontSize: 16,
   fontStyle: "normal",
   fontWeight: 400,
-  lineHeight: "normal"
+  lineHeight: "normal",
 }));
 
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
-  cursor: 'pointer',
+  cursor: "pointer",
   "&:hover": {
     backgroundColor: "#313131",
   },

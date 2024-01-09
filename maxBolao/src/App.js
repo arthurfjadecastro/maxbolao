@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Home } from "./Components/Home";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // The Layout component is used to separate the application's layout from the initial routing.
 // It returns a div containing the Home component.
 function Layout() {

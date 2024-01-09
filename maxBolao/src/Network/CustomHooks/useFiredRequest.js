@@ -3,7 +3,7 @@ import useRequest from "./useRequest";
 
 const useFiredRequest = (request, requestBody) => {
   const [fire, result] = useFiredHook(useRequest, request, requestBody);
-  const fireWithRequestFunction = requestBody => {
+  const fireWithRequestFunction = (requestBody) => {
     if (requestBody) fire(request, requestBody);
     else fire();
   };

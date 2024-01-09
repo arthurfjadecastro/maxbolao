@@ -1,16 +1,16 @@
 // BasicCard.jsx
-import React from 'react';
+import React from "react";
 import "./basicCard.css";
 
 function BasicCard({ title, isFifthCard, isFourthCard, index }) {
-  const titleWithLineBreaks = title.split('\n').map((line, index) => (
+  const titleWithLineBreaks = title.split("\n").map((line, index) => (
     <React.Fragment key={index}>
       {line}
       <br />
     </React.Fragment>
   ));
 
-  const containerClass = isFifthCard ? 'FifthCard' : {};
+  const containerClass = isFifthCard ? "FifthCard" : {};
 
   return (
     <div className={`Container ${containerClass}`}>
@@ -18,9 +18,7 @@ function BasicCard({ title, isFifthCard, isFourthCard, index }) {
         <div className="tipografiaIcon">{index}</div>
       </div>
       <div className="Tipografia">
-        <p className="textCard">
-          {titleWithLineBreaks}
-        </p>
+        <p className="textCard">{titleWithLineBreaks}</p>
       </div>
     </div>
   );

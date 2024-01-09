@@ -7,7 +7,7 @@ const useFiredHook = (useDeferredHook, ...outerArgs) => {
   const fire = (...innerArgs) => {
     if (innerArgs.length > 0) setPreviousArgs(innerArgs);
     else setPreviousArgs(outerArgs);
-  }
+  };
 
   return [fire, result];
 };
