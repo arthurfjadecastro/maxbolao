@@ -1,51 +1,17 @@
 import React, { useState } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Dialog, DialogTitle, DialogContent, Typography, TableTheme } from "@mui/material";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+import {  TableBody, TableHead, TableRow, Paper, Dialog, DialogTitle, DialogContent, Typography, TableTheme, Skeleton } from "@mui/material";
+import {  ThemeProvider } from "@mui/material/styles";
+import {
+  darkTheme,
+  StyledTableContainer,
+  StyledTable,
+  StyledTableHeadCell,
+  StyledTableRow,
+  StyledTableCell,
+} from './TableStyle';
+import {RenderIf} from "../Home/Utils"
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    background: {
-      paper: '#484848',
-      default: '#484848',
-    },
-  },
-});
-
-const StyledTableContainer = styled(TableContainer)({
-  margin: 0,
-  marginTop: 0,
-  background: "#484848",
-});
-
-const StyledTable = styled(Table)({
-  minWidth: 650,
-});
-
-const StyledTableHeadCell = styled(TableCell)(({ theme, header }) => ({
-  color: header ? "#A8A8A8" : "#F2F2F2",
-  fontFamily: "Satoshi",
-  fontSize: 16,
-  fontStyle: "normal",
-  fontWeight: 400,
-  lineHeight: "normal"
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-  cursor: 'pointer',
-  "&:hover": {
-    backgroundColor: "#313131",
-  },
-}));
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  color: "#F2F2F2",
-}));
-
-function BasicTable({ rows }) {
+function BasicTable({ rows, loadingTable}) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedRowInfo, setSelectedRowInfo] = useState(null);
 
@@ -63,6 +29,8 @@ function BasicTable({ rows }) {
   const handleCloseDialog = () => {
     setDialogOpen(false);
   };
+
+  // console.log("rows",rows)
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -83,10 +51,22 @@ function BasicTable({ rows }) {
               </TableRow>
             </TableHead>
             <TableBody>
+            <RenderIf predicate={loadingTable}>
+  {[...Array(30)].map((_, rowIndex) => (
+    <StyledTableRow key={rowIndex + 1}>
+      {[...Array(9)].map((_, cellIndex) => (
+        <StyledTableCell key={cellIndex} component="th" scope="row">
+          <Skeleton animation="wave" />
+        </StyledTableCell>
+      ))}
+    </StyledTableRow>
+  ))}
+</RenderIf>
+              <RenderIf predicate={!loadingTable}>
               {rows.map((row, index) => (
                 <StyledTableRow key={index + 1} onClick={() => handleRowClick(row)}>
-                  <StyledTableCell component="th" scope="row">{index + 1}</StyledTableCell>
-                  <StyledTableCell align="right">{row.name}</StyledTableCell>
+                  <StyledTableCell component="th" scope="row">{ index + 1 }</StyledTableCell>
+                  <StyledTableCell align="right">{ row.name   }</StyledTableCell>
                   <StyledTableCell align="right">{row.pontos}</StyledTableCell>
                   <StyledTableCell align="right">{row.sg}</StyledTableCell>
                   <StyledTableCell style={{color: winnerColor(index)}} align="right">{row.premio}</StyledTableCell>
@@ -95,7 +75,8 @@ function BasicTable({ rows }) {
                   <StyledTableCell align="right">{row.GP3.Clube}</StyledTableCell>
                   <StyledTableCell align="right">{row.GP4.Clube}</StyledTableCell>
                 </StyledTableRow>
-              ))}
+              ))}        
+              </RenderIf>     
             </TableBody>
           </StyledTable>
         </StyledTableContainer>

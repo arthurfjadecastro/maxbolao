@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect} from 'react';
 import "./home.css";
 import Navbar from './Navbar/navbar';
 import {  Grid } from '@mui/material';
@@ -18,8 +18,7 @@ import { Facade } from './FrontAge';
 function Home() {
   //Realizar fetch na rota https://bolao.maxmat1.com.br/resultados
   const [useResults, error] = useResultsFootball();
-
-
+  const [loadingTable, setLoadingTable] = useState(true)
   //Configurar rotação das faixas
   const rotates = ["rotate(3deg)", "rotate(-3deg)"];
   // Referência para dar Scrolling
@@ -28,6 +27,43 @@ function Home() {
   let players = [];
   // Última atualização
   let updateAt = ""
+
+  // useEffect(() => {
+  //   setLoadingTable(false);
+  // }, [players]);
+
+  useEffect(() => {
+    if (useResults && useResults.data && useResults.data.Competidores) {
+      setLoadingTable(false);
+    }
+  }, [useResults]);
+
+
+
+    // Container para análise de layout futura no modo responsivo quando em ambiente de homologação
+    const FrameItemContainer = styled('div')({
+      position: 'absolute',
+      top: '0',
+      left: '5%',
+      transform: 'translate(-35%, -10%)',
+      marginTop: 96,
+      '@media (max-width: 768px)': { 
+        left: '0',
+        transform: 'translate(-15%, -10%)', 
+      },
+    });
+
+    //Pattern
+    function createData(
+      pos,
+      name,
+      pontos,
+      sg,
+      premio,
+      clubes,
+    ) {
+      return { pos, name, pontos, sg, premio, GP1: clubes[0], GP2: clubes[1], GP3: clubes[2], GP4: clubes[3] };
+    }
 
   
     //Método para formatar a última atualização
@@ -48,52 +84,24 @@ function Home() {
     
 
 
-
     // Popular
     if (useResults && useResults.data && useResults.data.Competidores) {
       updateAt = EqualDesignDateFormat(useResults.data.atualizado_em)
-      console.log(updateAt)
-
-    //Pattern
-    function createData(
-      pos,
-      name,
-      pontos,
-      sg,
-      premio,
-      clubes,
-    ) {
-      return { pos, name, pontos, sg, premio, GP1: clubes[0], GP2: clubes[1], GP3: clubes[2], GP4: clubes[3] };
-    }
-
-
-    
-    players = useResults.data.Competidores.map((competidor) => {
-      return createData(
-        "",
-        competidor.Nome,
-        competidor.Pontos,
-        competidor.Saldo_Gols,
-        competidor.Premio,
-        competidor.Clubes.map((clube) => clube),
-      );
-    });
+      players = useResults.data.Competidores.map((competidor) => {
+        return createData(
+          "",
+          competidor.Nome,
+          competidor.Pontos,
+          competidor.Saldo_Gols,
+          competidor.Premio,
+          competidor.Clubes.map((clube) => clube),
+        );
+     });
   }
 
 
 
-  // Container para análise de layout futura no modo responsivo quando em ambiente de homologação
-  const FrameItemContainer = styled('div')({
-    position: 'absolute',
-    top: '0',
-    left: '5%',
-    transform: 'translate(-35%, -10%)',
-    marginTop: 96,
-    '@media (max-width: 768px)': { 
-      left: '0',
-      transform: 'translate(-15%, -10%)', 
-    },
-  });
+
   
   
   return (
@@ -108,12 +116,12 @@ function Home() {
         </FrameItemContainer>
         
         {/* 3 -  Imagem com Título e subtítulo*/}
-        <HeaderMax updateAt={updateAt}/>
+        <HeaderMax loadingTable={loadingTable} updateAt={updateAt}/>
         <MaxImage/>
         
         {/* 4 -  Tabela */}
         <Grid  container >
-          <BasicTable rows={players} />
+          <BasicTable loadingTable={loadingTable} rows={players} />
         </Grid>
         
         {/* 5 -  Regras*/}
