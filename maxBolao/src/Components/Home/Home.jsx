@@ -45,7 +45,7 @@ function Home() {
   });
 
   const notify = () => {
-    toast.error("Tente novamente mais tarde!");
+    toast.error("Ocorreu um erro no carregamento dos dados. Por favor, tente novamente mais tarde!");
   };
 
   if (error) {
