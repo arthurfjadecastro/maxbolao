@@ -1,5 +1,6 @@
 # MAXBOLAO
-Seja bem vindo ao repositório do projeto Movies, um caso de uso implementado contendo a versão para dispositivos móveis iOS. Veja instruções de como usar e também acompanhe os processos realizados neste aplicativo desenvolvido com o auxílio de ferramentas e tecnologias como Sketch, Xcode, Trello, Swift e outros.
+Seja bem-vindo ao repositório do projeto MAXBOLAO.
+Veja instruções de como usar e também acompanhe os processos realizados neste aplicativo desenvolvido com o auxílio de ferramentas e tecnologias como Figma, Vscode, ReactJS, HTML e CSS.
 
 Estrutura de Arquivos/
 ```md
