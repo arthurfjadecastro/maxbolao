@@ -10,6 +10,7 @@ import {
   StyledTableCell,
 } from './TableStyle';
 import {RenderIf} from "../Home/Utils"
+import PlayerDetail from './PlayerDetail';
 
 function BasicTable({ rows, loadingTable}) {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -30,7 +31,6 @@ function BasicTable({ rows, loadingTable}) {
     setDialogOpen(false);
   };
 
-  // console.log("rows",rows)
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -52,67 +52,35 @@ function BasicTable({ rows, loadingTable}) {
             </TableHead>
             <TableBody>
             <RenderIf predicate={loadingTable}>
-  {[...Array(30)].map((_, rowIndex) => (
-    <StyledTableRow key={rowIndex + 1}>
-      {[...Array(9)].map((_, cellIndex) => (
-        <StyledTableCell key={cellIndex} component="th" scope="row">
-          <Skeleton animation="wave" />
-        </StyledTableCell>
-      ))}
-    </StyledTableRow>
-  ))}
-</RenderIf>
-              <RenderIf predicate={!loadingTable}>
-              {rows.map((row, index) => (
-                <StyledTableRow key={index + 1} onClick={() => handleRowClick(row)}>
-                  <StyledTableCell component="th" scope="row">{ index + 1 }</StyledTableCell>
-                  <StyledTableCell align="right">{ row.name   }</StyledTableCell>
-                  <StyledTableCell align="right">{row.pontos}</StyledTableCell>
-                  <StyledTableCell align="right">{row.sg}</StyledTableCell>
-                  <StyledTableCell style={{color: winnerColor(index)}} align="right">{row.premio}</StyledTableCell>
-                  <StyledTableCell align="right">{row.GP1.Clube}</StyledTableCell>
-                  <StyledTableCell align="right">{row.GP2.Clube}</StyledTableCell>
-                  <StyledTableCell align="right">{row.GP3.Clube}</StyledTableCell>
-                  <StyledTableCell align="right">{row.GP4.Clube}</StyledTableCell>
+              {[...Array(30)].map((_, rowIndex) => (
+                <StyledTableRow key={rowIndex + 1}>
+                  {[...Array(9)].map((_, cellIndex) => (
+                    <StyledTableCell key={cellIndex} component="th" scope="row">
+                      <Skeleton animation="wave" />
+                    </StyledTableCell>
+                  ))}
                 </StyledTableRow>
-              ))}        
-              </RenderIf>     
+              ))}
+            </RenderIf>
+            <RenderIf predicate={!loadingTable}>
+            {rows.map((row, index) => (
+              <StyledTableRow key={index + 1} onClick={() => handleRowClick(row)}>
+                <StyledTableCell component="th" scope="row">{ index + 1 }</StyledTableCell>
+                <StyledTableCell align="right">{ row.name   }</StyledTableCell>
+                <StyledTableCell align="right">{row.pontos}</StyledTableCell>
+                <StyledTableCell align="right">{row.sg}</StyledTableCell>
+                <StyledTableCell style={{color: winnerColor(index)}} align="right">{row.premio}</StyledTableCell>
+                <StyledTableCell align="right">{row.GP1.Clube}</StyledTableCell>
+                <StyledTableCell align="right">{row.GP2.Clube}</StyledTableCell>
+                <StyledTableCell align="right">{row.GP3.Clube}</StyledTableCell>
+                <StyledTableCell align="right">{row.GP4.Clube}</StyledTableCell>
+              </StyledTableRow>
+            ))}        
+            </RenderIf>     
             </TableBody>
           </StyledTable>
         </StyledTableContainer>
-        <Dialog open={dialogOpen} onClose={handleCloseDialog}>
-          <DialogTitle>Informações Gerais</DialogTitle>
-          <DialogContent>
-            {selectedRowInfo && (
-              <>
-                <Typography>Nome: {selectedRowInfo.name}</Typography>
-                <Typography>Pontos: {selectedRowInfo.pontos}</Typography>
-                <Typography>Saldo de Gols: {selectedRowInfo.sg}</Typography>
-
-                <StyledTable>
-                  <TableHead>
-                    <TableRow>
-                      <StyledTableCell>Clube</StyledTableCell>
-                      <StyledTableCell>Pontos</StyledTableCell>
-                      <StyledTableCell>Jogos</StyledTableCell>
-                      <StyledTableCell>Saldo de Gols</StyledTableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {['GP1', 'GP2', 'GP3', 'GP4'].map((gp) => (
-                      <TableRow key={gp}>
-                        <StyledTableCell>{selectedRowInfo[gp].Clube}</StyledTableCell>
-                        <StyledTableCell>{selectedRowInfo[gp].pontos}</StyledTableCell>
-                        <StyledTableCell>{selectedRowInfo[gp].jogos}</StyledTableCell>
-                        <StyledTableCell>{selectedRowInfo[gp].saldoGols}</StyledTableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </StyledTable>
-              </>
-            )}
-          </DialogContent>
-        </Dialog>
+        <PlayerDetail selectedRowInfo={selectedRowInfo} handleCloseDialog={handleCloseDialog} dialogOpen={dialogOpen}  />
       </>
     </ThemeProvider>
   );

@@ -1,18 +1,14 @@
 import React, { useRef, useState, useEffect} from 'react';
-import "./home.css";
 import Navbar from './Navbar/navbar';
-import {  Grid } from '@mui/material';
+import {  Button, Grid } from '@mui/material';
 import useResultsFootball from "../../Network/useResultsFootball";
 import { BasicTable } from '../BasicTable';
 import styled from 'styled-components';
 import { HeaderMax, MaxImage } from './HeaderMax';
 import { Rules } from './Rules';
 import { Facade } from './FrontAge';
-
-
-
-
-  
+import { toast } from 'react-toastify';
+import "./home.css";
 
 
 function Home() {
@@ -27,10 +23,32 @@ function Home() {
   let players = [];
   // Última atualização
   let updateAt = ""
+  // Estilos globais para o toast
+  const customToastStyle = {
+    '.Toastify__toast--error': {
+      background: '#6a6a6a  ', 
+      color: 'white',   
+    },
+  };
 
-  // useEffect(() => {
-  //   setLoadingTable(false);
-  // }, [players]);
+  Object.entries(customToastStyle).forEach(([selector, styles]) => {
+    const rule = selector + ' {' + Object.entries(styles).map(([property, value]) => `${property}: ${value};`).join(' ') + '}';
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.appendChild(document.createTextNode(rule));
+    document.head.appendChild(style);
+  });
+
+  
+
+
+  const notify = () => {
+    toast.error("Tente novamente mais tarde!");
+  };
+
+  if (error) {
+    notify(); 
+  }
 
   useEffect(() => {
     if (useResults && useResults.data && useResults.data.Competidores) {
@@ -39,6 +57,11 @@ function Home() {
   }, [useResults]);
 
 
+
+  // Simular erro
+  const simulateError = () => {
+    notify()
+  };
 
     // Container para análise de layout futura no modo responsivo quando em ambiente de homologação
     const FrameItemContainer = styled('div')({
@@ -83,7 +106,6 @@ function Home() {
     }
     
 
-
     // Popular
     if (useResults && useResults.data && useResults.data.Competidores) {
       updateAt = EqualDesignDateFormat(useResults.data.atualizado_em)
@@ -100,15 +122,13 @@ function Home() {
   }
 
 
-
-
-  
-  
   return (
     <>
       <div className='backgroundPage'>
         {/* 1 - Navbar */}
         <Navbar regrasRef={rulesRef} />
+        {/* Comentar linha para produção */}
+       <Button onClick={simulateError}>Simulate Error</Button>
         
         {/* 2 -  Fachada Brasileirão */}
         <FrameItemContainer>
