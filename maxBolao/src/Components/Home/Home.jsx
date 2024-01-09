@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Navbar from "./Navbar/navbar";
+import Navbar from "./Navbar/Navbar";
 import { Button, Grid } from "@mui/material";
 import useResultsFootball from "../../Network/useResultsFootball";
 import { BasicTable } from "../BasicTable";
