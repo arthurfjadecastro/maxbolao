@@ -2,7 +2,26 @@
 Seja bem-vindo ao repositório do projeto MAXBOLAO.
 Veja instruções de como usar e também acompanhe os processos realizados neste aplicativo desenvolvido com o auxílio de ferramentas e tecnologias como Figma, Vscode, ReactJS, HTML e CSS.
 
-Estrutura de Arquivos/
+
+- Protótipo 
+
+
+![](https://media.giphy.com/media/8Z5MqfvHwTatWpxkJ1/giphy.gif) 
+
+- App em execução
+
+
+![](https://media.giphy.com/media/kPuEqXbqAAi6s4OPGU/giphy.gif) 
+
+## Como executar o projeto 
+Você só precisa realizar o clone do projeto em sua máquina e depois executar o pod install. O arquivo de configuração Keys foi versionado devido a questões de cunho educacional. 
+
+Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do projeto ou em repositórios remotos, ou seja, é uma chave individual dos envolvidos no projeto, atendendo requisitos de segurança. 
+
+
+
+
+# Estrutura de Arquivos/
 ```md
 ├── node_modules/
 ├── public/
