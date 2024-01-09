@@ -5,8 +5,6 @@ Veja instruções de como usar e também acompanhe os processos realizados neste
 
 - Protótipo 
 
-
-![](https://media.giphy.com/media/8Z5MqfvHwTatWpxkJ1/giphy.gif) 
 ![image](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/e5b7e28c-8619-4525-835b-eb4fc5bc0be6)
 
 
