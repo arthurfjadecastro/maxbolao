@@ -1,4 +1,4 @@
-.backgroundpage{
+.backgroundPage{
     margin-left: 72px;
     margin-right: 72px;
     width: auto;
@@ -19,7 +19,7 @@ font-weight: 600;
 line-height: normal;
 }
 
-.Regras { 
+.Rules { 
   display: flex;
   width: 100%;
   flex-direction: column;
