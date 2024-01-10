@@ -36,7 +36,6 @@ export default function Facade({ rotates }) {
   useEffect(() => {
     const updateElements = () => {
       const screenWidth = window.innerWidth;
-      console.log("size", screenWidth);
       const maxElements = Math.floor(screenWidth / frameItemWidth);
 
       const newElements = [];

@@ -19,7 +19,6 @@ export default function HeaderMax({ updateAt, loadingTable }) {
           color="white"
           variant="h5"
         >
-          {" "}
           Resultados em Tempo Real
         </Typography>
         <Typography
