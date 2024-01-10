@@ -9,7 +9,7 @@ https://www.figma.com/file/aqaQvVQY3t3oSPSAIWqpkF/Bol%C3%A3o-do-max?type=design&
 
 
 
-![](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/8127d5c9-562b-4845-baee-96688cd0f47e)
+https://github.com/arthurfjadecastro/maxbolao/assets/27228969/8127d5c9-562b-4845-baee-96688cd0f47e
 
 
 - App em execução
