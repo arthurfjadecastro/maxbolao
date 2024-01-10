@@ -83,9 +83,35 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 ## Frameworks aplicadas no projeto
 
-**Hero** - Biblioteca para criar transições de visualização em iOS. 
+**@emotion/react** - Biblioteca para escrever estilos com JavaScript (Emotion CSS-in-JS). 
+
+**@emotion/styled** - Utilitário de componentes estilizados para @emotion/react. 
+
+**@mui/icons-material** - Biblioteca de ícones do Material-UI.
+
+**@mui/material** - Biblioteca de componentes React do Material-UI.
+
+**@mui/styled-engine-sc** - Motor styled-components para Material-UI.
+
+**date-fns** - Biblioteca moderna de utilitários de data em JavaScript.
+
+**react** - Pacote React para trabalhar com o DOM.
+
+**react-dom** - Biblioteca para criar transições de visualização em iOS. 
 
 **Alamofire** - Biblioteca que atua na camada de rede usando a linguagem swift.
+
+**react-router-dom** - Roteamento declarativo para aplicações React.
+
+**react-scripts** - Configuração e scripts para Create React App.
+
+**react-toastify** - Biblioteca de notificações para aplicações React.
+
+**styled-components** - Biblioteca de estilização para React e componentes.
+
+**web-vitals** - Biblioteca para medir Web Vitals em aplicações React.
+
+
 
 
 ## Experiência com o projeto 
