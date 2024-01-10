@@ -14,8 +14,7 @@ https://www.figma.com/file/aqaQvVQY3t3oSPSAIWqpkF/Bol%C3%A3o-do-max?type=design&
 
 - App em execução
 
-
-![](https://media.giphy.com/media/kPuEqXbqAAi6s4OPGU/giphy.gif) 
+![rulesgif](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/9612df42-58c7-44c4-a2f9-cc17c9734ed6)
 
 ## Como executar o projeto 
 
