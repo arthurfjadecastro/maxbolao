@@ -14,10 +14,18 @@ Veja instruções de como usar e também acompanhe os processos realizados neste
 ![](https://media.giphy.com/media/kPuEqXbqAAi6s4OPGU/giphy.gif) 
 
 ## Como executar o projeto 
-Você só precisa realizar o clone do projeto em sua máquina e depois executar o pod install. O arquivo de configuração Keys foi versionado devido a questões de cunho educacional. 
 
-Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do projeto ou em repositórios remotos, ou seja, é uma chave individual dos envolvidos no projeto, atendendo requisitos de segurança. 
+Para começar a utilizar o projeto, siga as instruções abaixo:
 
+1. Faça o download e extraia o projeto em seu ambiente de desenvolvimento.
+
+2. Abra o projeto em um editor de texto ou IDE de sua preferência.
+
+3. No terminal, execute o comando `npm install` para instalar os pacotes.
+
+4. `npm start` para rodar o projeto em seu navegador `http://localhost:3000/`, automaticamente.
+
+5. Para executar o projeto nas próximas vezes, basta utilizar `npm start` no terminal.
 
 
 
