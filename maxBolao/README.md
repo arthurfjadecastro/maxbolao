@@ -150,4 +150,5 @@ Os planos para este projeto são:
 ### Autor
 
 - [Arthur de Castro](https://github.com/arthurfjadecastro)
+- [Fernando Lemos](https://github.com/fernandolemos92)
 
