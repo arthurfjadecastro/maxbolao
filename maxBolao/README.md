@@ -118,13 +118,13 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 # Com este projeto, pude revitalizar e aprimorar significativamente minha experiência no desenvolvimento web, explorando e incorporando novas tecnologias e aprofundando conceitos fundamentais. A integração entre o Figma e o desenvolvimento web, especialmente ao utilizar plugins e códigos disponíveis com o recurso de Auto Layout ativado, proporcionou um ambiente mais eficiente e integrado.
 
-# Ao trabalhar com requisições, destaco a aplicação do Single Responsibility Principle, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
+- Ao trabalhar com requisições, destaco a aplicação do Single Responsibility Principle, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
 
-# A criação de um 'Fetcher' representou uma abstração eficaz para lidar com requisições e obtenção de dados, promovendo uma estrutura mais modular e de fácil manutenção. Adquiri um entendimento mais profundo dos princípios de design, como o 'Separation of Concerns', que se reflete na organização lógica dos arquivos e pastas do projeto.
+- A criação de um 'Fetcher' representou uma abstração eficaz para lidar com requisições e obtenção de dados, promovendo uma estrutura mais modular e de fácil manutenção. Adquiri um entendimento mais profundo dos princípios de design, como o 'Separation of Concerns', que se reflete na organização lógica dos arquivos e pastas do projeto.
 
-# A implementação de um arquivo de constantes, contendo valores parametrizados, foi uma estratégia valiosa para promover alterações propagáveis e aumentar a manutenibilidade do código. Esse enfoque oferece flexibilidade para ajustes futuros e contribui para um desenvolvimento mais sustentável.
+- A implementação de um arquivo de constantes, contendo valores parametrizados, foi uma estratégia valiosa para promover alterações propagáveis e aumentar a manutenibilidade do código. Esse enfoque oferece flexibilidade para ajustes futuros e contribui para um desenvolvimento mais sustentável.
 
-# Em resumo, este projeto não apenas reavivou meu conhecimento técnico, mas também me proporcionou a oportunidade de aplicar práticas avançadas e incorporar aprendizados recentes, resultando em uma abordagem mais robusta e eficiente no desenvolvimento de software.
+- Em resumo, este projeto não apenas reavivou meu conhecimento técnico, mas também me proporcionou a oportunidade de aplicar práticas avançadas e incorporar aprendizados recentes, resultando em uma abordagem mais robusta e eficiente no desenvolvimento de software.
 
 
 
