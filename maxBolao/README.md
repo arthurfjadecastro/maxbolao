@@ -99,7 +99,7 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 **react-dom** - Biblioteca para criar transições de visualização em iOS. 
 
-**Alamofire** - Biblioteca que atua na camada de rede usando a linguagem swift.
+**Axios** - Cliente HTTP baseado em promessas para navegador e Node.js.
 
 **react-router-dom** - Roteamento declarativo para aplicações React.
 
