@@ -12,11 +12,14 @@ https://www.figma.com/file/aqaQvVQY3t3oSPSAIWqpkF/Bol%C3%A3o-do-max?type=design&
 
 
 
-- Regras
+- Rules Scrolling
 ![rulesgif](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/9612df42-58c7-44c4-a2f9-cc17c9734ed6)
 
 - Simulate Error
 ![error](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/e802487a-a531-4b08-9dc8-d531ca634a42)
+
+- Loading State and Info Details
+![loadingstate-ezgif com-optimize](https://github.com/arthurfjadecastro/maxbolao/assets/27228969/5a60d0d7-ad09-4d8d-9939-97e55a1ce272)
 
 
 ## Como executar o projeto 
