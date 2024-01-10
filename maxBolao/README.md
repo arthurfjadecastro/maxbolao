@@ -148,14 +148,36 @@ Para começar a utilizar o projeto, siga as instruções abaixo:
 
 Os planos para este projeto são:
 
-- [ ] Criação de uma Splash Screen customizada
+- [ ] Realizar a Criação de uma Splash Screen customizada
         
-      Em prol de aprimorar o conhecimento em customizar animações. 
+      Em prol de aprimorar o conhecimento, melhorar a experiência do usuário quanto ao loading na tabela e na última atualização.
+
+- [ ] Remover Simulate Error 
+        
+      Recurso existente apenas para simulação do caso de uso alternativo. Não há necessidade de ir para produção.
+
+- [ ] Validar dicionário de meses
+        
+      Uma vez que a requisição retorna a data e hora da última atualização, na conversão para demonstração visual do usuário é necessário mapear a abreviação do mês retornado via request. Isto posto, precisamos validar o mapeamento realizado no projeto, uma vez que o retorno pode ser em 'Português' ou 'Inglês'.
+
+      Jan: "Janeiro",
+      Feb: "Fevereiro",
+      Mar: "Março",
+      Apr: "Abril",
+      May: "Maio",
+      Jun: "Junho",
+      Jul: "Julho",
+      Aug: "Agosto",
+      Sep: "Setembro",
+      Oct: "Outubro",
+      Nov: "Novembro",
+      Dec: "Dezembro",
 
     
     
-### Autor
+### Autores
 
 - [Arthur de Castro](https://github.com/arthurfjadecastro)
+- [Francisco L. Figueiredo]()
 - [Fernando Lemos](https://github.com/fernandolemos92)
 
