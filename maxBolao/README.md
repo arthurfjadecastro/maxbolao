@@ -134,14 +134,13 @@ Para começar a utilizar o projeto, siga as instruções abaixo:
 
 ## Experiência com o projeto 
 
-### Este projeto renovou minha experiência no desenvolvimento web, integrando eficientemente o Figma com o uso de plugins e códigos disponíveis, proporcionando um ambiente mais produtivo.
+### Este projeto renovou nossas experiências no desenvolvimento web, integrando eficientemente o Figma com o uso de plugins e códigos disponíveis, proporcionando um ambiente mais produtivo.
 
-- Ao trabalhar com requisições, destaco a aplicação do **Single Responsibility Principle**, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
+- Ao trabalhar com requisições, destacamos a aplicação do **Single Responsibility Principle**, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
 
-- Adquiri um entendimento mais profundo dos princípios de design, como o **'Separation of Concerns'**, que se reflete na organização lógica dos arquivos e pastas do projeto.
+- Adquirimos um entendimento mais profundo dos princípios de design, como o **'Separation of Concerns'**, que se reflete na organização lógica dos arquivos e pastas do projeto.
 
-- Em resumo, este projeto não apenas reavivou meu conhecimento técnico, mas também me proporcionou a oportunidade de aplicar práticas avançadas e incorporar aprendizados recentes, resultando em uma abordagem mais **robusta e eficiente** no desenvolvimento de software.
-
+- Em resumo, este projeto não apenas reavivou nosso conhecimento técnico, mas também me proporcionou a oportunidade de aplicar práticas avançadas e incorporar aprendizados recentes, resultando em uma abordagem mais **robusta e eficiente** no desenvolvimento de software.
 
 
 ## Futuro
