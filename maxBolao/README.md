@@ -116,33 +116,15 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 ## Experiência com o projeto 
 
-    # Com este projeto aprimorei a qualidade técnica e o conhecimento ao se trabalhar com requisições e boas 
-      práticas baseadas em conceitos altamente importantes no desenvolvimento de software.
-    
-    - Single Responsibility Principle para separar atividades diferentes em diferentes partes do código, para
-      que no futuro se houver alterações ou incrementos em lugares específicos, mantenha-se a redução nos
-      custos de épicos relacionados a bugs no código.
+# Com este projeto, pude revitalizar e aprimorar significativamente minha experiência no desenvolvimento web, explorando e incorporando novas tecnologias e aprofundando conceitos fundamentais. A integração entre o Figma e o desenvolvimento web, especialmente ao utilizar plugins e códigos disponíveis com o recurso de Auto Layout ativado, proporcionou um ambiente mais eficiente e integrado.
 
-    - Criação de um 'Fetcher', que é a abstração da requisição e a obtenção dos dados. 
+# Ao trabalhar com requisições, destaco a aplicação do Single Responsibility Principle, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
 
-    - Conhecimento adquirido em 'Separation of concern design principles', que parte da organização lógica
-      dos arquivos e pastas do projeto.
+# A criação de um 'Fetcher' representou uma abstração eficaz para lidar com requisições e obtenção de dados, promovendo uma estrutura mais modular e de fácil manutenção. Adquiri um entendimento mais profundo dos princípios de design, como o 'Separation of Concerns', que se reflete na organização lógica dos arquivos e pastas do projeto.
 
-    - Criação de um Arquivo de constantes com valores parametrizados em prol de realizar 
-      alterações propagáveis, aumentando assim a manutenibilidade.
+# A implementação de um arquivo de constantes, contendo valores parametrizados, foi uma estratégia valiosa para promover alterações propagáveis e aumentar a manutenibilidade do código. Esse enfoque oferece flexibilidade para ajustes futuros e contribui para um desenvolvimento mais sustentável.
 
-    
-  
-    
-- Neste projeto foi utilizado Coordinator, que permite desacoplar o fluxo lógico do projeto, agregando valor na escalabilidade de novas telas.
-
-- O Factory foi usado com a intenção de desacoplar a instanciação da classe de atualização dos dados de Movies.
-	
-- Singleton, Delegate entre outros padrões também foram utilizados.
-
-
-
-
+# Em resumo, este projeto não apenas reavivou meu conhecimento técnico, mas também me proporcionou a oportunidade de aplicar práticas avançadas e incorporar aprendizados recentes, resultando em uma abordagem mais robusta e eficiente no desenvolvimento de software.
 
 
 
@@ -150,21 +132,12 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 Os planos para este projeto são:
 
-- [ ] Criação de uma Launch Screen customizada
+- [ ] Criação de uma Splash Screen customizada
         
       Em prol de aprimorar o conhecimento em customizar animações. 
 
-- [ ] Criação de um UserOnboarding 
-
-      Facilitar a informação para o melhor entendimento e usabilidade do aplicativo.
-
-- [ ] Criação de um Banco de Dados 
-
-      Proposta de aplicação prática em torno do conhecimento adquirido até o momento. 
     
     
-    
-
 ### Autor
 
 - [Arthur de Castro](https://github.com/arthurfjadecastro)
