@@ -116,7 +116,7 @@ Vale ressaltar que, não deve-se adicionar chaves secretas no código fonte do p
 
 ## Experiência com o projeto 
 
-# Com este projeto, pude revitalizar e aprimorar significativamente minha experiência no desenvolvimento web, explorando e incorporando novas tecnologias e aprofundando conceitos fundamentais. A integração entre o Figma e o desenvolvimento web, especialmente ao utilizar plugins e códigos disponíveis com o recurso de Auto Layout ativado, proporcionou um ambiente mais eficiente e integrado.
+### Com este projeto, pude revitalizar e aprimorar significativamente minha experiência no desenvolvimento web, explorando e incorporando novas tecnologias e aprofundando conceitos fundamentais. A integração entre o Figma e o desenvolvimento web, especialmente ao utilizar plugins e códigos disponíveis com o recurso de Auto Layout ativado, proporcionou um ambiente mais eficiente e integrado.
 
 - Ao trabalhar com requisições, destaco a aplicação do Single Responsibility Principle, que orientou a separação de diferentes responsabilidades em partes distintas do código. Essa abordagem não apenas facilita a compreensão do código, mas também contribui para a redução de custos relacionados a bugs, pois modificações e incrementos em áreas específicas tornam-se mais seguros e diretos.
 
